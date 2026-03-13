@@ -6,7 +6,6 @@
 
 .container {
   border: 5px solid rgb(36, 36, 36);
-  /* width: 640px; */
   aspect-ratio: 1;
   display: flex;
   flex-wrap: wrap;
@@ -16,6 +15,9 @@
 .square {
   box-sizing: border-box;
   border: 2px solid rgb(141, 141, 141);
-  /* width: 40px; */
   aspect-ratio: 1;
+}
+
+.hover {
+  background-color: black;
 }

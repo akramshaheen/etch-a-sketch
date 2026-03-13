@@ -1,15 +1,21 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  text-align: center;
 }
 
 .container {
-  border: 10px solid rgb(0, 0, 0);
+  border: 5px solid rgb(36, 36, 36);
+  /* width: 640px; */
+  aspect-ratio: 1;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
 }
 
 .square {
+  box-sizing: border-box;
   border: 2px solid rgb(141, 141, 141);
-  width: 20px;
+  /* width: 40px; */
   aspect-ratio: 1;
 }

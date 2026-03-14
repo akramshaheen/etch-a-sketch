@@ -2,9 +2,34 @@
   margin: 0;
   padding: 0;
   text-align: center;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  width: 600px;
+  margin: 0 auto 10px auto;
+}
+
+h1 {
+  font-size: 40px;
+  margin-right: auto;
+}
+
+#set-grid,
+#clear {
+  font-size: 18px;
+  padding: 0 10px;
+}
+
+.percent {
+  font-size: 18px;
 }
 
 .container {
+  width: 600px;
   border: 5px solid rgb(36, 36, 36);
   aspect-ratio: 1;
   display: flex;

@@ -19,9 +19,24 @@ const generateGrid = () => {
 generateGrid();
 
 setGrid.addEventListener("click", () => {
-  grid = +prompt("Choose a number between 16 and 100:");
-  container.innerHTML = "";
-  generateGrid();
+  while (true) {
+    let userChoice = +prompt("Enter grid size (16-100):");
+
+    if (userChoice === 0) {
+      return;
+    } else if (
+      !Number.isInteger(userChoice) ||
+      userChoice > 100 ||
+      userChoice < 16
+    ) {
+      alert("invalid! Please enter a WHOLE NUMBER between 16 and 100.");
+    } else {
+      grid = userChoice;
+      container.innerHTML = "";
+      generateGrid();
+      return;
+    }
+  }
 });
 
 container.addEventListener("mouseover", (e) => {

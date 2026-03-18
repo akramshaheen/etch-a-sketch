@@ -18,10 +18,13 @@ h1 {
   margin-right: auto;
 }
 
-#set-grid,
-#clear {
+.header button {
   font-size: 18px;
   padding: 0 10px;
+}
+
+#color-switch {
+  flex: 1 1 auto;
 }
 
 .percent {
@@ -41,8 +44,4 @@ h1 {
   box-sizing: border-box;
   border: 1px solid rgb(141, 141, 141);
   aspect-ratio: 1;
-}
-
-.hover {
-  background-color: black;
 }

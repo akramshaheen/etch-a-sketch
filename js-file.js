@@ -1,5 +1,6 @@
 const setGrid = document.querySelector("#set-grid");
 const clear = document.querySelector("#clear");
+const colorSwitch = document.querySelector("#color-switch");
 
 const container = document.querySelector(".container");
 let grid = 16;
@@ -16,8 +17,6 @@ const generateGrid = () => {
   }
   container.append(fragment);
 };
-
-generateGrid();
 
 setGrid.addEventListener("click", () => {
   let input = prompt("Enter grid size (16-100):");
@@ -43,8 +42,36 @@ clear.addEventListener("click", () => {
   generateGrid();
 });
 
-container.addEventListener("mouseover", (e) => {
+generateGrid();
+
+//Black hover event
+function blackColorCallBack(e) {
   if (e.target.matches(".square")) {
-    e.target.classList.add("hover");
+    e.target.style.backgroundColor = "black";
+  }
+}
+container.addEventListener("mouseover", blackColorCallBack);
+
+//Random color hover event
+function randomColor() {
+  const rdm = "#" + Math.floor(Math.random() * 16777216).toString(16);
+  return rdm;
+}
+
+function randomColorCallBack(e) {
+  if (e.target.matches(".square")) {
+    e.target.style.backgroundColor = randomColor();
+  }
+}
+
+colorSwitch.addEventListener("click", () => {
+  if (colorSwitch.innerHTML === "Black Mode") {
+    colorSwitch.innerHTML = "Color Mode";
+    container.removeEventListener("mouseover", blackColorCallBack);
+    container.addEventListener("mouseover", randomColorCallBack);
+  } else if (colorSwitch.innerHTML === "Color Mode") {
+    colorSwitch.innerHTML = "Black Mode";
+    container.addEventListener("mouseover", blackColorCallBack);
+    container.removeEventListener("mouseover", randomColorCallBack);
   }
 });

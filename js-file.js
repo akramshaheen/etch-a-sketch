@@ -1,4 +1,5 @@
 const setGrid = document.querySelector("#set-grid");
+const clear = document.querySelector("#clear");
 
 const container = document.querySelector(".container");
 let grid = 16;
@@ -35,6 +36,11 @@ setGrid.addEventListener("click", () => {
     generateGrid();
     return;
   }
+});
+
+clear.addEventListener("click", () => {
+  container.innerHTML = "";
+  generateGrid();
 });
 
 container.addEventListener("mouseover", (e) => {

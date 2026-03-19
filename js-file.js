@@ -56,6 +56,7 @@ function blackColorCallBack(e) {
 
     e.target.style.opacity = opacity;
     e.target.style.backgroundColor = "black";
+    e.target.style.transition = "ease 0.2s";
   }
 }
 container.addEventListener("mouseover", blackColorCallBack);
@@ -78,6 +79,7 @@ function randomColor() {
 function randomColorCallBack(e) {
   if (e.target.matches(".square")) {
     e.target.style.backgroundColor = randomColor();
+    e.target.style.transition = "ease 0.2s";
   }
 }
 

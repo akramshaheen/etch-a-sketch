@@ -45,8 +45,16 @@ clear.addEventListener("click", () => {
 generateGrid();
 
 //Black hover event
+
 function blackColorCallBack(e) {
   if (e.target.matches(".square")) {
+    let opacity = parseFloat(e.target.dataset.opacity) || 0;
+
+    if (opacity < 1) opacity += 0.2;
+
+    e.target.dataset.opacity = opacity;
+
+    e.target.style.opacity = opacity;
     e.target.style.backgroundColor = "black";
   }
 }
@@ -54,8 +62,17 @@ container.addEventListener("mouseover", blackColorCallBack);
 
 //Random color hover event
 function randomColor() {
-  const rdm = "#" + Math.floor(Math.random() * 16777216).toString(16);
-  return rdm;
+  let colors = [
+    "#8a00ff",
+    "#1e00ff",
+    "#00d5ff",
+    "#00ff1e",
+    "#eeff00",
+    "#ff5500",
+    "#ff00b3",
+    "#ff0000",
+  ];
+  return colors[Math.floor(Math.random() * colors.length)];
 }
 
 function randomColorCallBack(e) {
